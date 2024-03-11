@@ -17,6 +17,7 @@ Taking this into consideration, I decided to focus on zero shot instruction-tuni
 This model performance could be improved furhter for domain-specififc fine-tuning with human labelled data.
 
 
+
 # Starting off
 Since we do not have lot of labled data with custom entities tags and lot of time for supervised learning, I started off with prompting the the Google's Gemini and OpenAI's GPT-3. Once I was happy with my prompt as seen below, I could essentially use the APIs for these models to inference on the provided demo csv. However, to save the cost of compute and inferecing, I have investigated open-source models for custom NER and their api creation using huggingface. 
 
@@ -27,6 +28,9 @@ One of the models I investigated for NER task using text-generation was Universa
 
 - Additionally, I also investigated a fine-tuned versoin of Meta's open-source Code LLama model for NER task which also uses text-generation technique by zero shot instruction tuning. My solution to the problem is based on [GoLLIE, a zero shot Information Extraction](https://github.com/hitz-zentroa/GoLLIE) as seen below by defining the annotation schema for custom entities type based on given PII taxanomy. The google colab notebook for the solution can be accessed [here](). 
 - This solution also allows me to set the gold standard and and use F1 evaluation score metric, including full control on the instruction template as seen in this [example](https://github.com/hitz-zentroa/GoLLIE/blob/main/notebooks/Named%20Entity%20Recognition.ipynb). 
+
+Example: 
+Supervised Fine-tuning of UniNER-7B achieved average F1 score of 84.78% on 20 datasets surpasing BERT-base and InstructUIE-11B by 4.69% and 3.62% repsectively on the 20 datasets.
 
 ```python
 
