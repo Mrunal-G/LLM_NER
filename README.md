@@ -21,6 +21,28 @@ This model performance could be improved furhter for domain-specififc fine-tunin
 # Starting off
 Since we do not have lot of labled data with custom entities tags and lot of time for supervised learning, I started off with prompting the the Google's Gemini and OpenAI's GPT-3. Once I was happy with my prompt as seen below, I could essentially use the APIs for these models to inference on the provided demo csv. However, to save the cost of compute and inferecing, I have investigated open-source models for custom NER and their api creation using huggingface. 
 
+```
+Rewrite the text by identifying the entities and writing the entity type (the one-word PII) from the following 15 entity types described below in front of the entities in square brackets within original text.
+
+[Name] - The complete name of an individual.
+[Address] - The residential address of an individual.
+[Email] - Personal email addresses.
+[SSN] - A unique number assigned to individuals in the the United States for identification purposes.
+[Passport] - A unique number assigned to a passport document.
+[License] - A unique number assigned to a driver's license.
+[CreditCard] - Numbers associated with personal credit cards.
+[Birthdate] - The birth date of an individual.
+[Phone] - Personal landline or mobile phone numbers.
+[MedicalRecord] - Unique identifiers for personal medical records.
+[Biometric] - Fingerprints, facial recognition patterns, DNA, etc.
+[Vehicle] - License plate numbers, VIN Vehicle Identification Number, etc.
+[InternetActivity] - IP addresses, cookie IDs, device identifiers, etc.
+[Employment] - Employee ID number, work email, work phone number, etc.
+[Education] - Student ID number, transcripts, etc.
+
+**Example:** My IP address is 192.0.2.0 [InternetActivity], my device identifier is DI12345 [InternetActivity], and my cookie ID is CI12345 [InternetActivity].
+```
+
 One of the models I investigated for NER task using text-generation was UniversalNER LLM variations released by Microsft on the Huhhingface hub. UniversalNER returns a tuple of the entities from the entire text document for the user specified entity-type. However, the limitations of this model includes that I can only check for one entity type (eg. location) at a time in a text document. By using brute force for checking multiple entities type in a text docuemnt, I get a empty array of entities. UniversalNER has used NER datasets from various domains so it can identify the entities for entity-types like InternetActivity and MedicalRecord. But, no amount of changes in the Langchain prompt template can make the model output entity-type beside the entities in the original text because of the nature and design of the model. In conclusion, I decided to use text-generation techniques to solve the given NER task. Note that, this means when I deploy the NER pipeline with Huggingface, docker and Kubernetes I would define Task as text-generation and not NER. 
 
 
