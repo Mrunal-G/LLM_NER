@@ -196,6 +196,8 @@ if __name__ == "__main__":
 I have managed to resolve the issues arising due to conflicting installation of flash-attention. Overall, resolving dependency conflicts took most amount of my time.
 - Apart from the dependency conflixt issues, a major problem with using the LLM for text-generation is that these models were so huge that I have to design my experiments based on the computational constraints of my laptop, kaggle gpu and free google colab. Apart from using the LLM models huggingface API for developing an app, I could not test these LLM models with my laptop GPU. So, most of my experiments are done using Kaggle notebooks and google colab pro version.
 
+## Inferencing
+![hf inference ](https://github.com/Mrunal-G/LLM_NER/blob/main/images/pic.png)
 
 
 
