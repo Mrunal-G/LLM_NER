@@ -48,13 +48,143 @@ One of the models I investigated for NER task using text-generation was Universa
 
 ### How to use F1 score evualuation metric for zero shot instruction tuning of LLM for NER
 
-- Additionally, I also investigated a fine-tuned versoin of Meta's open-source Code LLama model for NER task which also uses text-generation technique by zero shot instruction tuning. My solution to the problem is based on [GoLLIE, a zero shot Information Extraction](https://github.com/hitz-zentroa/GoLLIE) as seen below by defining the annotation schema for custom entities type based on given PII taxanomy. The google colab notebook for the solution can be accessed [here](). 
+- Additionally, I also investigated a fine-tuned versoin of Meta's open-source Code LLama model for NER task which also uses text-generation technique by zero shot instruction tuning. My solution to the problem is based on [GoLLIE, a zero shot Information Extraction](https://github.com/hitz-zentroa/GoLLIE) as seen below by defining the annotation schema for custom entities type based on given PII taxanomy. The google colab notebook for the solution can be accessed [here](https://github.com/Mrunal-G/anote_NER). 
 - This solution also allows me to set the gold standard and and use F1 evaluation score metric, including full control on the instruction template as seen in this [example](https://github.com/hitz-zentroa/GoLLIE/blob/main/notebooks/Named%20Entity%20Recognition.ipynb). 
 
 Example: 
 Supervised Fine-tuning of UniNER-7B achieved average F1 score of 84.78% on 20 datasets surpasing BERT-base and InstructUIE-11B by 4.69% and 3.62% repsectively on the 20 datasets.
 
 ```python
+from typing import List
+
+from src.tasks.utils_typing import Entity, dataclass
+
+"""
+Entity definitions
+"""
+
+
+@dataclass
+class Name(Entity):
+    """Refers to The complete name of an individual with or without initials."""
+
+    span: str  # Such as: "John H. Doe", "Jane Kim", "C.V. Raman", "Ashley"
+
+
+@dataclass
+class Address(Entity):
+    """Refers to The residential address of an individual."""
+
+    span: str  # Such as "456 Elm Avenue, Apartment 3B, Springfield, USA", "15 Rue de la Paix, Paris, France"
+
+
+@dataclass
+class Email(Entity):
+    """Refers to Personal email addresses."""
+
+    span: str  # Such as: "jane@gmail.com", "john.doe@hotmail.com", "", "Mercury", "Saturn"
+
+
+@dataclass
+class SSN(Entity):
+    """Refers to the social security number - a unique number assigned to individuals in the United States for identification purposes."""
+
+    span: str  # Such as: "987654321", "123-45-6789", "1234567890"
+
+@dataclass
+class Passport(Entity):
+    """Refers to Passport Number - A unique number assigned to a passport document."""
+
+    span: str  # Such as: "AB123456", "XY-123456789 (Issued: 2022-01-01, Expires: 2032-01-01)", "KL 876543"
+
+
+@dataclass
+class License(Entity):
+    """Refers to Driver's License Number - A unique number assigned to a driver's license. """
+
+    span: str  # Such as: "123456789", "DL-654321 (Issued: 2020-01-01, Expires: 2025-01-01)", "DL12-3456CD", "DL 987654"
+
+@dataclass
+class CreditCard(Entity):
+    """Refers to Credit Card Numbers - Numbers associated with personal credit cards."""
+
+    span: str  # Such as: "1234 5678 9012 3456", "9876 5432 1010 2020 (Expires: 12/25)", "4321-0987-6543-2109"
+
+@dataclass
+class Birthdate(Entity):
+    """Refers to Date of Birth - The birth date of an individual."""
+
+    span: str  # Such as: "05/25/1990", "25-May-1990", "May 25, 1990"
+
+
+@dataclass
+class Phone(Entity):
+    """Refers to Telephone Number - Personal landline or mobile phone numbers."""
+
+    span: str  # Such as: "Blue origin", "Boeing", "Northrop Grumman", "Arianespace"
+
+
+@dataclass
+class MedicalRecord(Entity):
+    """Refers to Medical Record Numbers - Unique identifiers for personal medical records."""
+
+    span: str  # Such as: "MRN123456", "MRN-98765-A", "MRN-456789 (Last updated: 2023-01-15)"
+
+
+@dataclass
+class Biometric(Entity):
+    """Refers to Biometric Identifiers - Fingerprints, facial recognition patterns, DNA, etc."""
+
+    span: str  # Such as: "BD12345", "ATCGATCGATCGATCG", "0123456789ABCDEF", "0x9876543210fedcba"
+
+
+
+@dataclass
+class Vehicle(Entity):
+    """Refers to Vehicle Identifiers - License plate numbers, VIN (Vehicle Identification Number), etc."""
+
+    span: str  # Such as: "ABC123", "1G1-BL52P0-TR123-456", "DEF-456", "1G1 BL52P0 TR123"
+
+
+@dataclass
+class InternetActivity(Entity):
+    """Refers to Internet Activity - IP addresses, cookie IDs, device identifiers, etc."""
+
+    span: str  # Such as: "192.0.2.1", "DI12345", "CI12345"
+
+@dataclass
+class Employment(Entity):
+    """Refers to Employment Information - Employee ID number, work email, work phone number, etc."""
+
+    span: str  # Such as: "E12345", "johndoe@company.com", "555-987-6543"
+
+@dataclass
+class Education(Entity):
+    """Refers to Educational Records - Student ID number, transcripts, etc.."""
+
+    span: str  # Such as: "S12345678", "DP-MSCS-2022", "CS108"
+
+
+ENTITY_DEFINITIONS: List[Entity] = [
+    Name,
+    Address,
+    Email,
+    SSN,
+    Passport,
+    License,
+    CreditCard,
+    Birthdate,
+    Phone,
+    MedicalRecord,
+    Biometric,
+    Vehicle,
+    InternetActivity,
+    Employment,
+    Education,
+]
+
+if __name__ == "__main__":
+    cell_txt = In[-1]
 
 
 
