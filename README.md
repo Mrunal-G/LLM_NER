@@ -48,7 +48,7 @@ One of the models I investigated for NER task using text-generation was Universa
 
 ### How to use F1 score evualuation metric for zero shot instruction tuning of LLM for NER
 
-- Additionally, I also investigated a fine-tuned versoin of Meta's open-source Code LLama model for NER task which also uses text-generation technique by zero shot instruction tuning. My solution to the problem is based on [GoLLIE, a zero shot Information Extraction](https://github.com/hitz-zentroa/GoLLIE) as seen below by defining the annotation schema for custom entities type based on given PII taxanomy. The google colab notebook for the solution can be accessed [here](https://github.com/Mrunal-G/anote_NER). 
+- Additionally, I also investigated a fine-tuned versoin of Meta's open-source Code LLama model for NER task which also uses text-generation technique by zero shot instruction tuning. My solution to the problem is based on [GoLLIE, a zero shot Information Extraction](https://github.com/hitz-zentroa/GoLLIE) as seen below by defining the annotation schema for custom entities type based on given PII taxanomy. The google colab notebook for the solution can be accessed [here](https://github.com/Mrunal-G/anote_NER/blob/main/NER.ipynb). 
 - This solution also allows me to set the gold standard and and use F1 evaluation score metric, including full control on the instruction template as seen in this [example](https://github.com/hitz-zentroa/GoLLIE/blob/main/notebooks/Named%20Entity%20Recognition.ipynb). 
 
 Example: 
