@@ -19,7 +19,7 @@ This model performance could be improved furhter for domain-specififc fine-tunin
 
 
 # Starting off
-Since we do not have lot of labled data with custom entities tags and lot of time for supervised learning, I started off with prompting the the Google's Gemini and OpenAI's GPT-3. Once I was happy with my prompt as seen below, I could essentially use the APIs for these models to inference on the provided demo csv. However, to save the cost of compute and inferecing, I have investigated open-source models for custom NER and their api creation using huggingface. 
+Since we do not have lot of labled data with custom entities tags and lot of time for supervised learning, I started off with prompting the the Google's Gemini and OpenAI's GPT-3. Once I was happy with my prompt as seen below, I could essentially use the APIs for these models to inference on the provided demo csv. However, to save the cost of compute and inferencing, I have investigated open-source models for custom NER and their api creation using huggingface. 
 
 ```
 Rewrite the text by identifying the entities and writing the entity type (the one-word PII) from the following 15 entity types described below in front of the entities in square brackets within original text.
