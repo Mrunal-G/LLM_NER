@@ -200,7 +200,7 @@ I have managed to resolve the issues arising due to conflicting installation of 
 
 - https://huggingface.co/docs/text-generation-inference/index
 
-![hf inference ]https://github.com/Mrunal-G/LLM_NER/blob/main/images/pic.png)
+ ![hf inference ](https://github.com/Mrunal-G/LLM_NER/blob/main/images/pic.png)
 
 
 # API development
