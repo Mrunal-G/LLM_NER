@@ -203,8 +203,12 @@ I have managed to resolve the issues arising due to conflicting installation of 
 ![hf inference ]https://github.com/Mrunal-G/LLM_NER/blob/main/images/pic.png)
 
 
+# API development
 
 
+# Web app development
+- https://huggingface.co/spaces/Mrunal09/NER
+- https://huggingface.co/spaces/Mrunal09/Multilingual-NER
 
 
 
