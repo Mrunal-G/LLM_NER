@@ -204,7 +204,8 @@ I have managed to resolve the issues arising due to conflicting installation of 
 
 
 # API development
-
+Currently working on developing API using FASTAPI for NER. 
+Exploring Langchainjs & HuggingFaceJs
 
 # Web app development
 - https://huggingface.co/spaces/Mrunal09/NER
