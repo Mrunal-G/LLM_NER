@@ -211,5 +211,9 @@ Exploring Langchainjs & HuggingFaceJs
 - https://huggingface.co/spaces/Mrunal09/NER
 - https://huggingface.co/spaces/Mrunal09/Multilingual-NER
 
+  ![](https://github.com/Mrunal-G/LLM_NER/blob/main/images/ner1.png)
+
+  ![](https://github.com/Mrunal-G/LLM_NER/blob/main/images/ner2.png)
+
 
 
