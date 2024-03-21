@@ -17,7 +17,7 @@ Customizing presidio analyzer
 Existing NER approaches lack many entity types and are sometimes not accurate enough to completely remove the PII. `Presidio` is already integrated into `LangChain`:
 
 - https://python.langchain.com/docs/guides/privacy/presidio_data_anonymization/
-
+- Presidio Demo --> https://huggingface.co/spaces/presidio/presidio_demo
 
 ## Web app development
 - https://huggingface.co/spaces/Mrunal09/NER
