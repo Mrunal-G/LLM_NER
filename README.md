@@ -22,6 +22,8 @@ Existing NER approaches lack many entity types and are sometimes not accurate en
 
   ![](https://github.com/Mrunal-G/LLM_NER/blob/main/images/Presidio.png)
 
+  ![](https://github.com/Mrunal-G/LLM_NER/blob/main/images/streamlit_PII.png)
+
 ## Web app development
 - https://huggingface.co/spaces/Mrunal09/NER
 - https://huggingface.co/spaces/Mrunal09/Multilingual-NER
@@ -29,6 +31,7 @@ Existing NER approaches lack many entity types and are sometimes not accurate en
   ![](https://github.com/Mrunal-G/LLM_NER/blob/main/images/ner1.png)
 
   ![](https://github.com/Mrunal-G/LLM_NER/blob/main/images/ner2.png)
+
 
 ============================================================================================
    Following approach discarded as it is not suitable to solve the PII detection problem.
