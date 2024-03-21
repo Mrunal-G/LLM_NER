@@ -1,3 +1,31 @@
+Realizing that finetuning and using NER approach is not suitable for PII detection at all, since the lot of the entity types need context awareness to understand the PII type. Prompting various open source models and usig Langchain or something similar is going to be the way to solve this problem.
+
+# Current Approach
+
+## API development
+Currently working on developing API using FASTAPI for NER. 
+Exploring Langchainjs & HuggingFaceJs.
+Langchain code from few months ago does not work anymore so exploring app development with framework.
+Llamaindex calls a NER model for PII detection.
+
+Predefined or custom PII recognizers leveraging Named Entity Recognition, regular expressions, rule based logic and checksum with relevant context in multiple language
+- https://github.com/microsoft/presidio
+
+Existing NER approaches lack many entity types and are sometimes not accurate enough to completely remove the PII. `Presidio` is already integrated into `LangChain`:
+
+- **https://python.langchain.com/docs/guides/privacy/presidio_data_anonymization/**
+
+
+## Web app development
+- https://huggingface.co/spaces/Mrunal09/NER
+- https://huggingface.co/spaces/Mrunal09/Multilingual-NER
+
+  ![](https://github.com/Mrunal-G/LLM_NER/blob/main/images/ner1.png)
+
+  ![](https://github.com/Mrunal-G/LLM_NER/blob/main/images/ner2.png)
+
+==============================================================================================
+
 # Named Entity Recognition (NER) for PII detection ?
 
 Most LLMs do not perform that well at Named Entity Recognition task out of the box. For the cost of inference, a model trained specifically for NER gives better results with predictable outputs and without hallucination. This was the approach that I had used for dealing with custom NER task in 2022 using transformer models by manaually labelling the data and then using supervised fine-tuning method. By investigating the current landscape of NER in 2024, I noticed that most of the recent approaches for creating custom NER systems are inclined towards leveraging LLM models for text-generation using prompting and instruction-tuning with zeroshot or few shot. I have investigated this recent approach for the given NER task because of custom named entity-types taxanomy and lack of availabliity of labeled data for custom NER.
@@ -206,32 +234,3 @@ Explored huggingface text generation inferencing and api deployment methods.
 - However, I am currently trying to resolve the dependency conflict with CUDA & GPU architecture. Once I resolve this problem I intend to create a Docker image for the same and solve this issue once and for all. 
 I have managed to resolve the issues arising due to conflicting installation of flash-attention. Overall, resolving dependency conflicts took most amount of my time.
 - Apart from the dependency conflixt issues, a major problem with using the LLM for text-generation is that these models were so huge that I have to design my experiments based on the computational constraints of my laptop, kaggle gpu and free google colab. Apart from using the LLM models huggingface API for developing an app, I could not test these LLM models with my laptop GPU. So, most of my experiments are done using Kaggle notebooks and google colab pro version.
-- Realizing that finetuning and using NER approach is not suitable for PII detection at all, since the lot of the entity types need context awareness to understand the PII type. Prompting various open source models and usig Langchain or something similar is going to be the way to solve this problem.
-
-
-# Current Approach
-
-## API development
-Currently working on developing API using FASTAPI for NER. 
-Exploring Langchainjs & HuggingFaceJs.
-Langchain code from few months ago does not work anymore so exploring app development with framework.
-Llamaindex calls a NER model for PII detection.
-
-Predefined or custom PII recognizers leveraging Named Entity Recognition, regular expressions, rule based logic and checksum with relevant context in multiple language
-- https://github.com/microsoft/presidio
-
-Existing NER approaches lack many entity types and are sometimes not accurate enough to completely remove the PII. `Presidio` is already integrated into `LangChain`:
-
-- **https://python.langchain.com/docs/guides/privacy/presidio_data_anonymization/**
-
-
-## Web app development
-- https://huggingface.co/spaces/Mrunal09/NER
-- https://huggingface.co/spaces/Mrunal09/Multilingual-NER
-
-  ![](https://github.com/Mrunal-G/LLM_NER/blob/main/images/ner1.png)
-
-  ![](https://github.com/Mrunal-G/LLM_NER/blob/main/images/ner2.png)
-
-
-
