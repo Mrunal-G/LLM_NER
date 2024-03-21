@@ -1,6 +1,6 @@
-# Named Entity Recognition (NER) 
+# Named Entity Recognition (NER) for PII detection ?
 
-Named Entity Recognition is a challenging problem in NLP. Most LLMs do not perform that well at Named Entity Recognition task out of the box. For the cost of inference, a model trained specifically for NER gives better results with predictable outputs and without hallucination. This was the approach that I had used for dealing with custom NER task in 2022 using transformer models by manaually labelling the data and then using supervised fine-tuning method. By investigating the current landscape of NER in 2024, I noticed that most of the recent approaches for creating custom NER systems are inclined towards leveraging LLM models for text-generation using prompting and instruction-tuning with zeroshot or few shot. I have investigated this recent approach for the given NER task because of custom named entity-types taxanomy and lack of availabliity of labeled data for custom NER.
+Most LLMs do not perform that well at Named Entity Recognition task out of the box. For the cost of inference, a model trained specifically for NER gives better results with predictable outputs and without hallucination. This was the approach that I had used for dealing with custom NER task in 2022 using transformer models by manaually labelling the data and then using supervised fine-tuning method. By investigating the current landscape of NER in 2024, I noticed that most of the recent approaches for creating custom NER systems are inclined towards leveraging LLM models for text-generation using prompting and instruction-tuning with zeroshot or few shot. I have investigated this recent approach for the given NER task because of custom named entity-types taxanomy and lack of availabliity of labeled data for custom NER.
 
 ## LLM text-generation for NER - How does this work ?
 
@@ -207,6 +207,16 @@ I have managed to resolve the issues arising due to conflicting installation of 
 Currently working on developing API using FASTAPI for NER. 
 Exploring Langchainjs & HuggingFaceJs
 Langchain code from few months ago does not work anymore so exploring app development with framework.
+Llamaindex calls a NER model for PII detection.
+
+Predefined or custom PII recognizers leveraging Named Entity Recognition, regular expressions, rule based logic and checksum with relevant context in multiple language
+- https://github.com/microsoft/presidio
+
+Existing NER approaches lack many entity types and are sometimes not accurate enough to completely remove the PII. `Presidio` is already integrated into `LangChain`:
+
+- **https://python.langchain.com/docs/guides/privacy/presidio_data_anonymization/**
+
+
 # Web app development
 - https://huggingface.co/spaces/Mrunal09/NER
 - https://huggingface.co/spaces/Mrunal09/Multilingual-NER
