@@ -1,4 +1,4 @@
-Realizing that finetuning and using NER approach is not suitable for PII detection at all, since the lot of the entity types need context awareness to understand the PII type. Prompting various open source models and usig Langchain or something similar is going to be the way to solve this problem.
+Realizing that finetuning and using NER approach is not suitable for PII detection at all, since the lot of the entity types need context awareness to understand the PII type. Prompting various open source models and using Langchain or something similar is going to be the way to solve this problem.
 
 # Current Approach
 
