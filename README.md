@@ -213,7 +213,7 @@ I have managed to resolve the issues arising due to conflicting installation of 
 
 ## API development
 Currently working on developing API using FASTAPI for NER. 
-Exploring Langchainjs & HuggingFaceJs
+Exploring Langchainjs & HuggingFaceJs.
 Langchain code from few months ago does not work anymore so exploring app development with framework.
 Llamaindex calls a NER model for PII detection.
 
