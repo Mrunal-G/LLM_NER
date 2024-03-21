@@ -18,6 +18,7 @@ Existing NER approaches lack many entity types and are sometimes not accurate en
 
 - https://python.langchain.com/docs/guides/privacy/presidio_data_anonymization/
 - Presidio Demo --> https://huggingface.co/spaces/presidio/presidio_demo
+- https://microsoft.github.io/presidio/samples/
 
 ## Web app development
 - https://huggingface.co/spaces/Mrunal09/NER
