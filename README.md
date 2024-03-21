@@ -190,20 +190,28 @@ if __name__ == "__main__":
 
 ```
 
-## Challenges I faced
+### Inferencing
 
-- However, I am currently trying to resolve the dependency conflict with CUDA & GPU architecture. Once I resolve this problem I intend to create a Docker image for the same and solve this issue once and for all. 
-I have managed to resolve the issues arising due to conflicting installation of flash-attention. Overall, resolving dependency conflicts took most amount of my time.
-- Apart from the dependency conflixt issues, a major problem with using the LLM for text-generation is that these models were so huge that I have to design my experiments based on the computational constraints of my laptop, kaggle gpu and free google colab. Apart from using the LLM models huggingface API for developing an app, I could not test these LLM models with my laptop GPU. So, most of my experiments are done using Kaggle notebooks and google colab pro version.
+Explored huggingface text generation inferencing and api deployment methods.
 
-## Inferencing
 
 - https://huggingface.co/docs/text-generation-inference/index
+- https://www.youtube.com/watch?v=u-GE9_411g4
 
  ![hf inference ](https://github.com/Mrunal-G/LLM_NER/blob/main/images/pic.png)
 
 
-# API development
+### Challenges I faced
+
+- However, I am currently trying to resolve the dependency conflict with CUDA & GPU architecture. Once I resolve this problem I intend to create a Docker image for the same and solve this issue once and for all. 
+I have managed to resolve the issues arising due to conflicting installation of flash-attention. Overall, resolving dependency conflicts took most amount of my time.
+- Apart from the dependency conflixt issues, a major problem with using the LLM for text-generation is that these models were so huge that I have to design my experiments based on the computational constraints of my laptop, kaggle gpu and free google colab. Apart from using the LLM models huggingface API for developing an app, I could not test these LLM models with my laptop GPU. So, most of my experiments are done using Kaggle notebooks and google colab pro version.
+- Realizing that finetuning and using NER approach is not suitable for PII detection at all, since the lot of the entity types need context awareness to understand the PII type. Prompting various open source models and usig Langchain or something similar is going to be the way to solve this problem.
+
+
+# Current Approach
+
+## API development
 Currently working on developing API using FASTAPI for NER. 
 Exploring Langchainjs & HuggingFaceJs
 Langchain code from few months ago does not work anymore so exploring app development with framework.
@@ -217,7 +225,7 @@ Existing NER approaches lack many entity types and are sometimes not accurate en
 - **https://python.langchain.com/docs/guides/privacy/presidio_data_anonymization/**
 
 
-# Web app development
+## Web app development
 - https://huggingface.co/spaces/Mrunal09/NER
 - https://huggingface.co/spaces/Mrunal09/Multilingual-NER
 
