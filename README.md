@@ -26,6 +26,7 @@ Existing NER approaches lack many entity types and are sometimes not accurate en
 
 ==========================================================================================
    Following approach discarded as it is not suitable to solve the PII detection problem.
+   
 ==========================================================================================
 
 # Named Entity Recognition (NER) for PII detection ?
