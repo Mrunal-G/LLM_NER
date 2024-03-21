@@ -5,10 +5,10 @@ Realizing that finetuning and using NER approach is not suitable for PII detecti
 ## API development
 Currently working on developing API using FASTAPI for NER. 
 Exploring Langchainjs & HuggingFaceJs.
-Langchain code from few months ago does not work anymore so exploring app development with framework.
+Langchain code from few months ago does not work anymore due to rapid development & changes in this framework so exploring app development using Langchain framework.
 Llamaindex calls a NER model for PII detection.
 
-Predefined or custom PII recognizers leveraging Named Entity Recognition, regular expressions, rule based logic and checksum with relevant context in multiple language
+**Predefined or custom PII recognizers** leveraging Named Entity Recognition, regular expressions, rule based logic and checksum with relevant context in multiple language
 - https://github.com/microsoft/presidio
 
 Existing NER approaches lack many entity types and are sometimes not accurate enough to completely remove the PII. `Presidio` is already integrated into `LangChain`:
