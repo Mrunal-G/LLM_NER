@@ -11,9 +11,12 @@ Llamaindex calls a NER model for PII detection.
 **Predefined or custom PII recognizers** leveraging Named Entity Recognition, regular expressions, rule based logic and checksum with relevant context in multiple language
 - https://github.com/microsoft/presidio
 
+Customizing presidio analyzer
+- https://github.com/microsoft/presidio/blob/main/docs/samples//python/customizing_presidio_analyzer.ipynb
+- 
 Existing NER approaches lack many entity types and are sometimes not accurate enough to completely remove the PII. `Presidio` is already integrated into `LangChain`:
 
-- **https://python.langchain.com/docs/guides/privacy/presidio_data_anonymization/**
+- https://python.langchain.com/docs/guides/privacy/presidio_data_anonymization/
 
 
 ## Web app development
