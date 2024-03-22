@@ -4,7 +4,7 @@ Realizing that finetuning and using NER approach is not suitable for PII detecti
 
 ## API development
 Currently working on developing API using FASTAPI for NER. 
-Exploring Langchainjs & HuggingFaceJs.
+Exploring LangchainJs, HuggingFaceJs & TransformersJs.
 Langchain code from few months ago does not work anymore due to rapid development & changes in this framework so exploring app development using Langchain framework.
 Llamaindex calls a NER model for PII detection.
 
