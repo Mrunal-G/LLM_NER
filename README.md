@@ -20,7 +20,7 @@ Existing NER approaches lack many entity types and are sometimes not accurate en
 - Presidio Demo --> https://huggingface.co/spaces/presidio/presidio_demo
 - https://microsoft.github.io/presidio/samples/
 
-  ![](https://github.com/Mrunal-G/LLM_NER/blob/main/images/Presidio.png)
+  ![](https://github.com/Mrunal-G/LLM_NER/blob/main/images/presidio_PII.png)
 
   ![](https://github.com/Mrunal-G/LLM_NER/blob/main/images/streamlit_PII.png)
 
