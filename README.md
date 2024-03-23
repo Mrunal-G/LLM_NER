@@ -1,6 +1,6 @@
 Realizing that finetuning and using NER approach is not suitable for PII detection at all, since the lot of the entity types need context awareness to understand the PII type. Prompting various open source models and using Langchain or something similar is going to be the way to solve this problem.
 
-I inferenced Microsoft Presidio on demo data PII text csv and the results are still not satisfactory.
+I inferenced Microsoft Presidio on demo data PII text csv and the results are still not satisfactory as seen in [here](https://github.com/Mrunal-G/LLM_NER/tree/main/Presidio).
 
 
 # Current Approach
